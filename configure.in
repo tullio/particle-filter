@@ -1,0 +1,29 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ(2.61)
+AC_INIT(FULL-PACKAGE-NAME, VERSION, BUG-REPORT-ADDRESS)
+
+# Checks for programs.
+AC_PROG_CC
+AC_PROG_CXX
+AC_CHECK_PROG(AR, ar, ar, not found)
+# Checks for libraries.
+
+for i in /usr/lib /usr/local/lib; do
+ if test -e $i/libcppcutter.so; then
+   LDFLAGS=-L$i
+ fi
+done
+
+# Checks for header files.
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+
+AC_SUBST(CC)
+AC_SUBST(CXX)
+AC_SUBST(LDFLAGS)
+AC_OUTPUT(Makefile src/Makefile test/Makefile sample/Makefile)
+
