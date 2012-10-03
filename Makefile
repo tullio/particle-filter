@@ -4,6 +4,7 @@ all:
 	cd src && $(MAKE)
 
 install:
+	test -d lib || mkdir lib
 	cp src/libparticle.* lib/
 
 .PHONY: test sample

@@ -4,7 +4,7 @@ SRCS=test_particle.cc test_particles.cc test_filter.cc test_edit.cc
 OBJS=$(SRCS:.cc=.o)
 TARGETS=$(SRCS:.cc=)
 CFLAGS=-I/usr/local/include/cutter -I. -I../src  -g -Wall
-LDFLAGS=-L/usr/local/lib -L. -L../src -lparticle -lcppcutter
+LDFLAGS= -L. -L../src -lparticle -lcppcutter
 all: $(TARGETS)
 
 test_particle: test_particle.o
