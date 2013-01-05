@@ -1,6 +1,6 @@
 CC=@CC@
 CXX=@CXX@
-SRCS=test_particle.cc test_particles.cc test_filter.cc test_edit.cc
+SRCS=test_particle.cc test_particles.cc test_filter.cc
 OBJS=$(SRCS:.cc=.o)
 TARGETS=$(SRCS:.cc=)
 CFLAGS=-I/usr/local/include/cutter -I. -I../src  -g -Wall
