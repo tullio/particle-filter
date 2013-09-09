@@ -162,9 +162,7 @@ bool Filter::resampling()
 //    for(int i=1;i<((int)m-2);++i)
     for(int i=1;i<=x.size();++i)
     {
-      double a1=0.0, a2=0.0;
-      a1 = psuma[i-1];
-      a2 = psuma[i];
+      double a1 = psuma[i-1], a2 = psuma[i];
 //cout<<a1<<"<"<<u*alphasum<<"<="<<a2<<"?"<<endl;
 //cout<<a1/alphasum<<"<"<<u<<"<="<<a2/alphasum<<"?"<<endl;
 //cout<<(u<=a2/alphasum)<<"?"<<endl;
