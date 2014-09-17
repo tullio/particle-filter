@@ -5,7 +5,7 @@ OBJS=$(SRCS:.cc=.o)
 HEADS=$(SRCS:.cc=.h)
 TARGETS=libparticle.a
 AR=@AR@
-CFLAGS=-I. -g -Wall
+CFLAGS=-I. -g -Wall -fPIC
 all: $(TARGETS)
 
 libparticle.a: $(OBJS)
