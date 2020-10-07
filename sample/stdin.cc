@@ -8,7 +8,6 @@ Particles<double> func1(Particles<double> &p, Particles<double> &v)
   {
     for(int j=0;j<p[i].size();++j)
     {
-//cout<< p[i][j]<<"+"<<v[i][j]<<endl;
       p[i][j]= p[i][j]+v[i][j];
     }
   }

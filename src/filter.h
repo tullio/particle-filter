@@ -21,6 +21,7 @@ class Filter
   double (*robserve_func)(Particles<double> &p, Particle<double> &q);
   double (*robserve_jacobian_func)(Particles<double> &p, Particle<double> &q);
   double (*robserve_density_func)(double w);
+
 public:
   Filter();
   Filter(double seed);

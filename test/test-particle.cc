@@ -9,6 +9,7 @@ void cut_setup()
 {
   cout<<"setup"<<endl;
 }
+
 void cut_teardown()
 {
 }

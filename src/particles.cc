@@ -3,15 +3,18 @@
 template<class C> Particles<C>::Particles()
 {
 }
+
 template<class C> Particles<C>::Particles(int number)
 {
   p.resize(number);
   this->number = number;
 }
 template<class C> Particles<C>::Particles(int number, int dimension)
+
 {
   resize(number, dimension);
 }
+
 // Copy constructor
 template<class C> Particles<C>::Particles(const Particles &f)
 {
@@ -22,6 +25,7 @@ template<class C> Particles<C>::Particles(const Particles &f)
     p[i] = f[i];
   }
 }
+
 // Copy substitution
 template<class C> Particles<C>& Particles<C>::operator=(const Particles &f)
 {
@@ -36,6 +40,7 @@ template<class C> Particles<C>& Particles<C>::operator=(const Particles &f)
   }
   return(*this);
 }
+
 template<class C> Particles<C> &Particles<C>::operator+=(Particles<C> a)
 {
   for(int i=0;i<size();++i)
@@ -44,6 +49,7 @@ template<class C> Particles<C> &Particles<C>::operator+=(Particles<C> a)
   }
   return(*this);
 }
+
 template<class C> Particles<C> Particles<C>::operator+(Particles<C> &a)
 {
   Particles<C> c = *this;
@@ -53,6 +59,7 @@ template<class C> Particles<C> Particles<C>::operator+(Particles<C> &a)
 template<class C> Particles<C>::~Particles()
 {
 }
+
 template<class C> bool Particles<C>::resize(int number, int dimension)
 {
   p.resize(number);
@@ -67,6 +74,7 @@ template<class C> bool Particles<C>::resize(int number, int dimension)
   }
   return(true);
 }
+
 template<class C> bool Particles<C>::resize(int number, int dimension, C a0)
 {
   p.resize(number);
@@ -81,22 +89,27 @@ template<class C> bool Particles<C>::resize(int number, int dimension, C a0)
   }
   return(true);
 }
+
 template<class C> int Particles<C>::size()
 {
   return(number);
 }
+
 template<class C> Particle<C> &Particles<C>::operator[](unsigned int i)
 {
   return(p.at(i));
 }
+
 template<class C> Particle<C> Particles<C>::operator[](unsigned int i) const
 {
   return(p.at(i));
 }
+
 template<class C> vector<Particle<C> > Particles<C>::toVector()
 {
   return(p);
 }
+
 template<class C> int Particles<C>::dump_particles()
 {
 //  for(vector<Particle<C> >::iterator i=p.begin();
@@ -108,6 +121,7 @@ template<class C> int Particles<C>::dump_particles()
   }
   return(0);
 }
+
 template<class C> string Particles<C>::toString()
 {
   ostringstream s;

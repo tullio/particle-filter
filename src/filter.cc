@@ -7,6 +7,7 @@ Filter::Filter()
   state_func = NULL;
   mtrand.seed(time(NULL));
 }
+
 Filter::Filter(double seed)
 {
   number = -1;
@@ -14,6 +15,7 @@ Filter::Filter(double seed)
   state_func = NULL;
   mtrand.seed(seed);
 }
+
 Filter::~Filter()
 {
 }
@@ -24,11 +26,13 @@ bool Filter::setNumber(int n)
   alpha.resize(n);
   return(true);
 }
+
 bool Filter::setDimension(int d)
 {
   dimension = d;
   return(true);
 }
+
 bool Filter::createInitialParticles()
 {
   if(number<0||dimension<0) return(false);
@@ -36,6 +40,7 @@ bool Filter::createInitialParticles()
   v.resize(number, dimension);
   return(true);
 }
+
 bool Filter::createInitialParticles(double d)
 {
   if(number<0||dimension<0) return(false);
@@ -43,6 +48,7 @@ bool Filter::createInitialParticles(double d)
   v.resize(number, dimension);
   return(true);
 }
+
 bool Filter::create_system_noise(double mean, double dist)
 {
   for(int i=0;i<v.size();++i)
@@ -54,53 +60,64 @@ bool Filter::create_system_noise(double mean, double dist)
   }
   return(true);
 }
+
 int Filter::dump_predict_particles()
 {
   x.dump_particles();
   return(0);
 }
+
 int Filter::dump_System_Noise()
 {
   v.dump_particles();
   return(0);
 }
+
 Particles<double> Filter::get_predict_particles()
 {
   return(x);
 }
+
 Particles<double> Filter::get_system_noise()
 {
   return(v);
 }
+
 bool Filter::set_state_func(Particles<double> (*func)(Particles<double> &p, Particles<double> &v))
 {
   state_func = func;
   return(true);
 }
+
 bool Filter::set_robserve_func(double (*func)(Particles<double> &p, Particle<double> &q))
 {
   robserve_func = func;
   return(true);
 }
+
 bool Filter::set_robserve_jacobian_func(double (*func)(Particles<double> &p, Particle<double> &q))
 {
   robserve_jacobian_func = func;
   return(true);
 }
+
 bool Filter::set_robserve_density_func(double (*func)(double w))
 {
   robserve_density_func = func;
   return(true);
 }
+
 Filter & Filter::get_next_state()
 {
   (*state_func)(x, v);
   return(*this);
 }
+
 double Filter::get_observed_noise(int i)
 {
   return((*robserve_func)(y, x[i]));
 }
+
 double Filter::get_robserved_density_value(double w)
 {
   return((*robserve_density_func)(w));
@@ -111,6 +128,7 @@ bool Filter::set_observed_data(Particles<double> &p)
   y = p;
   return(true);
 }
+
 bool Filter::compute_likelihood()
 {
   for(unsigned int i=0;i<alpha.size();++i)
@@ -123,10 +141,12 @@ bool Filter::compute_likelihood()
   }
   return(true);
 }
+
 Particles<double> Filter::get_particles()
 {
   return(x);
 }
+
 bool Filter::resampling()
 {
   double alphasum = 0.0;

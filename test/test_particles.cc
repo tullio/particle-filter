@@ -8,6 +8,7 @@ namespace test_particles
   void cut_setup()
   {
   }
+
   void cut_teardown()
   {
   }

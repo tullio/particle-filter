@@ -11,6 +11,7 @@ template<class C> class Particle
 {
   vector<C> p;
   int dimension;
+
 public:
   Particle();
   Particle(int dimension);

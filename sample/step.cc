@@ -99,7 +99,6 @@ int main()
 //      cout<<"["<<j<<"]"<<x[j][0]<<endl;
     }
 //cout<<endl;
-//cout<<endl;
 
     double x_=0.0;
     for(int j=0;j<x.size();++j)

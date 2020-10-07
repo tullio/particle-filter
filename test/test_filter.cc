@@ -2,6 +2,7 @@
 #include <particle.h>
 #include <iostream>
 #include <filter.h>
+
 using namespace std;
 
 #define NUM_PARTICLE 100

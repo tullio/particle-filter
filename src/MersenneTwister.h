@@ -412,6 +412,7 @@ inline MTRand& MTRand::operator=( const MTRand& o )
 
 #endif  // MERSENNETWISTER_H
 
+
 // Change log:
 //
 // v0.1 - First release on 15 May 2000

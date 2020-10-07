@@ -1,6 +1,7 @@
 #include <cppcutter.h>
 #include <particle.h>
 #include <iostream>
+
 using namespace std;
 
 namespace test_particle

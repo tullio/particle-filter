@@ -9,6 +9,7 @@ template<class C> class Particles
 {
   vector<Particle<C> > p;
   int number;
+
 public:
   Particles();
   Particles(int number);

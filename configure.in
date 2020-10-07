@@ -26,4 +26,3 @@ AC_SUBST(CC)
 AC_SUBST(CXX)
 AC_SUBST(LDFLAGS)
 AC_OUTPUT(Makefile src/Makefile test/Makefile sample/Makefile)
-

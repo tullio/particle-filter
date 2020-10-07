@@ -11,6 +11,7 @@ all: $(TARGETS)
 
 step: $(OBJS)
 	$(CXX) -o $@ $@.o $(LDFLAGS)
+
 stdin: $(OBJS)
 	$(CXX) -o $@ $@.o $(LDFLAGS)
 
